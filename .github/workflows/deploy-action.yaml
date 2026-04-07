@@ -1,0 +1,15 @@
+name: Deploy Action
+
+on: push
+
+jobs:
+  test-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy the code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20.x"
