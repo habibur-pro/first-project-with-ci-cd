@@ -1,21 +1,10 @@
-name: Deploy Action
+name: Automate deployment
 
 on: push
 
 jobs:
-  test-code:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Copy the code
+      - name: Checkout the codes
         uses: actions/checkout@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: "20.x"
-
-      - name: Check node version
-        run: |
-          node -v
-          npm -v
-          lsb_release -a
